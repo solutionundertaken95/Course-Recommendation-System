@@ -1,0 +1,47 @@
+   
+   {% block content %}
+   {% load static %}
+   
+   {% include 'header.html' %}
+   
+   <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Login</h6>
+                <h1 class="mb-5">Login Here</h1>
+            </div>
+            <div class="row g-4">
+               <center>
+                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form method="post" action="addlogin">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="email" placeholder="Your Name">
+                                    <label for="name">Username/Email</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" name="password"  id="subject" placeholder="Subject">
+                                    <label for="subject">Password</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </center>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    {% include 'footer.html' %}
+
+    {% endblock %}

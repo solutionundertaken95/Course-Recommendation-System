@@ -1,0 +1,425 @@
+   
+   {% block content %}
+   {% load static %}
+   
+   {% include 'header.html' %}
+   
+   <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Test</h6>
+                <h1 class="mb-5"></h1>
+            </div>
+            <div class="row g-4">
+               
+                <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form method="post" action="addques">
+                        {% csrf_token %}
+						<div class="row g-3">
+
+						{% for i in int_cols %}
+
+                            <div class="col-md-12">
+								<label for="{{i}}">{{i}}</label>
+								<div class="form-floating">
+  									<input type="number" id="{{i}}" name="{{i}}" required><br><br>
+                                </div>
+                            </div>
+
+						{% endfor %}
+					
+						
+						
+						{% for key, values in maps.items %}
+						<div class="col-md-12">
+							<label for="{{key}}">{{key}}</label>
+							<div class="form-floating">
+								<select name="{{key}}" id="{{key}}" class="form-control"> 
+									{% for i, j in values.items %}
+									<option value="{{j}}">{{i}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+    				
+  						{% endfor %}
+
+							
+
+
+
+                        <!--   <div class="col-md-12">
+													                                    <label for="qu1">Your Question 1</label>
+
+                                <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+							                                    <label for="qu3">Your Question 2</label>
+
+                                <div class="form-floating">
+								
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+							                                    <label for="qu3">Your Question 3</label>
+
+                                <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							<div class="col-12">
+							                                    <label for="qu4">Your Question 4</label>
+
+                             <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							<div class="col-12">
+							                                    <label for="qu5">Your Question 5</label>
+
+                            <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							<div class="col-12">
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							<div class="col-12">
+							                                    <label for="qu7">Your Question 7</label>
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+														<div class="col-12">
+														                                    <label for="qu8">Your Question 8</label>
+
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							
+																					<div class="col-12">
+
+							                                    <label for="qu9">Your Question 9</label>
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							
+							</div>
+							
+							
+																					<div class="col-12">
+																					                                    <label for="qu10">Your Question 10</label>
+
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+																					<div class="col-12">
+																					                                    <label for="qu11">Your Question 11</label>
+
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+																					<div class="col-12">
+																					
+																					
+																					                                    <label for="qu12">Your Question 12</label>
+
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							
+																					<div class="col-12">
+																					                                    <label for="qu13">Your Question 13</label>
+
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							
+							
+																					<div class="col-12">
+																					
+																					                                    <label for="qu14">Your Question 14</label>
+
+
+							
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							
+											<div class="col-12">
+
+							
+							
+
+                                    <label for="qu15">Your Question 15</label>
+
+							<div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							
+																												<div class="col-12">
+
+							 
+							 
+							                                     <label for="qu16">Your Question 16</label>
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							
+																												<div class="col-12">
+
+							
+
+                                    <label for="qu17">Your Question 17</label>
+
+							<div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							
+							</div>
+							
+																												<div class="col-12">
+
+							 
+							 
+							                                     <label for="qu18">Your Question 18</label>
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							
+							</div>
+							
+							
+																												<div class="col-12">
+
+							 
+							 
+							 
+							                                     <label for="qu19">Your Question 19</label>
+
+							 <div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>
+							</div>
+							
+							
+							
+																												<div class="col-12">
+
+							
+                                    <label for="qu20">Your Question 20</label>
+							<div class="form-floating">
+                                   <div class="form-floating">
+									<select class="form-control"> 
+									<option>cse</option>
+									<option>it</option>
+									<option>mech</option>
+									
+									
+									</select>
+                                </div>
+                            </div>-->
+							</div>
+							
+							
+                            <div class="col-6">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    {% include 'footer.html' %}
+
+    {% endblock %}
